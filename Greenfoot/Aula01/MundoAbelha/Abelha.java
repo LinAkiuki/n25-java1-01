@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Abelha here.
+ * Esta é uma Classe que reprensentará uma Abelha.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lineu Akiuki 
+ * @version 20250604
  */
 public class Abelha extends Actor
 {
@@ -16,8 +16,11 @@ public class Abelha extends Actor
     {
         // Add your action code here.
         move(1);
-        if (Greenfoot.getKey()=="left"){
-            turn(-10);
+        if (Greenfoot.isKeyDown("left")){
+            turn(-5);
+        }
+        if (Greenfoot.isKeyDown("right")){
+            turn(5);
         }
     }
 }
