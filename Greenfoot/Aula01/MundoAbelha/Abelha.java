@@ -10,8 +10,8 @@ public class Abelha extends Actor
 {
     //Definindo os fields
     private int vidas;
-    private int score;
-    private int PONTOS = 100;
+    //private int score;
+    //private int PONTOS = 100;
     private int indice;
     private GreenfootImage imgs[];
     //Definindo o constructor
@@ -20,7 +20,7 @@ public class Abelha extends Actor
      */
     public Abelha(){
         vidas = 3; // vai ter 3 vidas
-        score = 0;
+        //score = 0;
         //GreenfootImage img=new GreenfootImage("bee01.png");
         //setImage(img);
         indice=0;
@@ -49,6 +49,7 @@ public class Abelha extends Actor
         capturarMosca();
         serCapturadoPelaAranha();
         animarAbelha();
+        atualizarVidas();
     }
 
     /**
@@ -105,7 +106,9 @@ public class Abelha extends Actor
         if (isTouching(Mosca.class)){
             removeTouching(Mosca.class);
             Greenfoot.playSound("slurp.wav");
-            atualizarScore();
+            //Fazendo o casting para BeeWorld
+            ((BeeWorld) getWorld()).updateScore();
+            //atualizarScore();
             //Vai de 1 a 800
             int posX = Greenfoot.getRandomNumber(getWorld().getWidth())+1;
             //Vai de 1 a 600
@@ -139,14 +142,17 @@ public class Abelha extends Actor
             }
         }
     }
-
-    public void atualizarScore(){
-        score += PONTOS;
-        getWorld().showText("SCORE: " + score, 100, 10);
-    }
-
+    //public void atualizarScore(){
+    //score += PONTOS;
+    //getWorld().showText("SCORE: " + score, 100, 10);
+    //}
     public void animarAbelha(){
         indice = (indice + 1) % 4;
         setImage(imgs[indice]);
+    }
+
+    public void atualizarVidas(){
+        getWorld()
+        .showText("Vidas: " + vidas,700, 10);    
     }
 }
