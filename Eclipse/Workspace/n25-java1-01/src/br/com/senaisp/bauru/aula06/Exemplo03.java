@@ -47,5 +47,4 @@ public class Exemplo03 {
 			System.out.println(); // Quebrando a linha
 		} // Fim for i
 	}
-
 }
