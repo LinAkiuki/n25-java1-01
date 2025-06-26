@@ -10,5 +10,4 @@ public class BaralhoTeste {
 			System.out.println(ct);
 		} while (bar.getNumCartasDisp() > 0);
 	}
-
 }

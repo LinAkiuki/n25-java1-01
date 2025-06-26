@@ -1,0 +1,12 @@
+package br.com.senaisp.bauru.aula07;
+
+import javax.swing.JOptionPane;
+
+public class DesenhoTeste {
+
+	public static void main(String[] args) {
+		JoptionPane pnl = new JoptionPane();
+		
+	}
+
+}
